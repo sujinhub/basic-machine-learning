@@ -34,6 +34,7 @@ plt.figure(figsize=(10, 10))
 sns.scatterplot(x='actual', y='pred', data=comparison)
 # plt.show()
 
+
 # [Evaluating in a statistical way]
 mse = mean_squared_error(y_test, pred) ** 0.5
 rmse = mean_squared_error(y_test, pred, squared=False)
