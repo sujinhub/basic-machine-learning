@@ -19,7 +19,7 @@ data = pd.read_csv(file_url)
 X = data[['age', 'sex', 'bmi', 'children', 'smoker']] # independent variables
 y = data['charges'] # dependent variables
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 100)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=100)
 # The random state hyperparameter is used to control any such randomness
 # involved in machine learning models to get consistent results. 
 
@@ -30,13 +30,13 @@ pred = model.predict(X_test)
 
 # [Evaluating with a graph]
 comparison = pd.DataFrame({'actual' : y_test, 'pred' : pred})
-plt.figure(figsize = (10, 10))
-sns.scatterplot(x = 'actual', y = 'pred', data = comparison)
+plt.figure(figsize=(10, 10))
+sns.scatterplot(x='actual', y='pred', data=comparison)
 # plt.show()
 
 # [Evaluating in a statistical way]
 mse = mean_squared_error(y_test, pred) ** 0.5
-rmse = mean_squared_error(y_test, pred, squared = False)
+rmse = mean_squared_error(y_test, pred, squared=False)
 # print(rmse)
 r2 = model.score(X_train, y_train)
 # print(r2)
